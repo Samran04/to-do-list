@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', loadTasks);
 addTaskBtn.addEventListener('click',addTask);
 
 function addTask(){
-    const taskTest = taskInput.value;//Get the value from input field
-    if(taskTest === ''){
+    const taskText = taskInput.value;//Get the value from input field
+    if(taskText === ''){
         alert('please enter a task!')
         return;
     }//alert if the input is empty
@@ -16,7 +16,7 @@ function addTask(){
     li.textContent = taskText;
     
     const completeBtn = document.createElement('button');
-    completeBtn.textContent = 'checkmark';
+    completeBtn.textContent = 'completed';
 
     completeBtn.addEventListener('click',() => {
         li.classList.toggle('completed');

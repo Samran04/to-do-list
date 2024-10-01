@@ -15,6 +15,9 @@ function addTask(){
     const li = document.createElement('li');
     li.textContent = taskText;
     
+    const buttonsDiv = document.createElement('div');
+    buttonsDiv.classList.add('buttons');
+
     const completeBtn = document.createElement('button');
     completeBtn.textContent = 'completed';
 
@@ -32,8 +35,9 @@ function addTask(){
         taskList.removeChild(li);
         saveTasks();
     });
-    li.appendChild(completeBtn);
-    li.appendChild(deleteBtn);
+    buttonsDiv.appendChild(completeBtn);
+    buttonsDiv.appendChild(deleteBtn);
+    li.appendChild(buttonsDiv);
     taskList.appendChild(li);
     taskInput.value = '';
     saveTasks();
